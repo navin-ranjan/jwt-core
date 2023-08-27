@@ -1,27 +1,25 @@
 package com.inn.navin.jwt.user.jwt;
 
+import com.inn.navin.jwt.user.model.User;
+
 public class JwtResponse {
-	String token;
+	private User user;
+	private String token;
 
-	public JwtResponse(String token) {
-		super();
-		this.token = token;
+	public User getUser() {
+		return user;
 	}
-
-	public JwtResponse() {
-		super();
+	public void setUser(User user) {
+		this.user = user;
 	}
-
 	public String getToken() {
 		return token;
 	}
-
 	public void setToken(String token) {
 		this.token = token;
 	}
-
-	@Override
-	public String toString() {
-		return "JwtResponse [token=" + token + "]";
-	}
+	public JwtResponse(User user, String token) {
+		this.user = user;
+		this.token = token;
+	}	
 }

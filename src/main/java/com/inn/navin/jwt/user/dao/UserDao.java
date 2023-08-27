@@ -11,7 +11,7 @@ public interface UserDao {
    * @param user
    * @return
    */
-	String addUser(User user);
+	Boolean addUser(User user);
 
 	
 	/**

@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import javax.persistence.Column;
@@ -12,8 +11,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -38,9 +35,6 @@ public class User implements UserDetails{
 
   @Column(name = "userPassword", length = 255, nullable = false)
   private String password;
-
-  @Column(name = "userRole", nullable = false)
-  private String role;
 
   @Column(name = "userDeleted")
   private boolean deleted = false;
@@ -85,13 +79,6 @@ public class User implements UserDetails{
     this.password = password;
   }
 
-  public String getRole() {
-    return role;
-  }
-
-  public void setRole(String role) {
-    this.role = role;
-  }
 
   public boolean getDeleted() {
     return deleted;
@@ -107,14 +94,12 @@ public class User implements UserDetails{
     this.name = name;
     this.email = email;
     this.password = password;
-    this.role = role;
     this.deleted = deleted;
   }
 
   @Override
   public String toString() {
-    return "User [uid=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
-        + ", deleted=" + deleted + "]";
+    return "User [uid=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", deleted=" + deleted + "]";
   }
 
   @Override

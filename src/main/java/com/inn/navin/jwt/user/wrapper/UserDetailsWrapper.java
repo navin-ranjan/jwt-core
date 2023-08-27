@@ -1,5 +1,9 @@
 package com.inn.navin.jwt.user.wrapper;
 
+import java.util.Set;
+
+import com.inn.navin.jwt.user.model.Role;
+
 public class UserDetailsWrapper {
 
   private Integer id;
@@ -7,14 +11,14 @@ public class UserDetailsWrapper {
 	private String email;
 	private String password;
 	private String token;
-	private String role;
+	private Set<Role> roles;
 	
 	
 	
 	@Override
   public String toString() {
     return "UserDetailsWrapper [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password
-        + ", token=" + token + ", role=" + role + "]";
+        + ", token=" + token + ", role=" + roles + "]";
   }
 	
 
@@ -28,12 +32,12 @@ public class UserDetailsWrapper {
   }
 
 
-  public String getRole() {
-    return role;
+  public Set<Role> getRole() {
+    return roles;
   }
 
-  public void setRole(String role) {
-    this.role = role;
+  public void setRole(Set<Role> roles) {
+    this.roles = roles;
   }
 
   public String getName() {
@@ -70,14 +74,14 @@ public class UserDetailsWrapper {
   }
 
 
-  public UserDetailsWrapper(Integer id, String name, String email, String password, String token, String role) {
+  public UserDetailsWrapper(Integer id, String name, String email, String password, String token, Set<Role> roles) {
     super();
     this.id = id;
     this.name = name;
     this.email = email;
     this.password = password;
     this.token = token;
-    this.role = role;
+    this.roles = roles;
   }
 	
 	

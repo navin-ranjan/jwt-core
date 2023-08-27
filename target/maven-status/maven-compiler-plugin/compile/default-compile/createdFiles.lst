@@ -1,7 +1,7 @@
 com/inn/navin/jwt/user/dao/UserDao.class
-com/inn/navin/jwt/user/model/User.class
-com/inn/navin/jwt/user/model/Role.class
 com/inn/navin/jwt/user/jwt/JwtResponse.class
+com/inn/navin/jwt/user/model/Role.class
+com/inn/navin/jwt/user/model/User.class
 com/inn/navin/jwt/user/jwt/JwtUserDetailsService.class
 com/inn/navin/jwt/user/jwt/JwtRequestFilter.class
 com/inn/navin/jwt/JwtCoreApplication.class

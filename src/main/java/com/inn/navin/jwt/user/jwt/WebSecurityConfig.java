@@ -37,6 +37,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
+
+	@Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 	
 	@Bean
 	public AuthenticationManager authenticationManagerBean() throws Exception{
@@ -52,7 +57,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.cors()
 		.disable()
 		.authorizeRequests()
-		.antMatchers("/token","/user/allUser","/user/addUser","/user/updateUser/{id}","/user/deleteUser/{id}","/project/allProject","/project/addProject","/project/updateProject/{id}","/project/deleteProject/{id}","/project/getProjectByUserId/{uid}","/bug/allBug","/bug/updateBug/{id}","/bug/addBug","/bug/getBugListByProject/{pid}","/bug/getUserByProject/{pid}","/bug/getBugById/{id}","/request/addRequest","/request/allRequest","/request/approveRequest/{bid}","/request/cancelRequest/{bid}","/request/getRequestByUserId/{uid}","/request/getAllRequest").permitAll()
+		.antMatchers("/token","/adduser","/user/addUser","/user/updateUser/{id}","/user/deleteUser/{id}","/project/allProject","/project/addProject","/project/updateProject/{id}","/project/deleteProject/{id}","/project/getProjectByUserId/{uid}","/bug/allBug","/bug/updateBug/{id}","/bug/addBug","/bug/getBugListByProject/{pid}","/bug/getUserByProject/{pid}","/bug/getBugById/{id}","/request/addRequest","/request/allRequest","/request/approveRequest/{bid}","/request/cancelRequest/{bid}","/request/getRequestByUserId/{uid}","/request/getAllRequest").permitAll()
 		.anyRequest().authenticated()
 		.and()
 		.exceptionHandling().authenticationEntryPoint(this.jwtAuthenticationEntryPoint)

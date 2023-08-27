@@ -29,12 +29,12 @@ public class UserDaoImpl implements UserDao {
 
 	//add user
 	@Transactional
-	public String addUser(User user) {
+	public Boolean addUser(User user) {
 		if (user != null)
 			entityManager.persist(user);
 		else
-			return "data not found !";
-		return "Data Add Sucessfully";
+			return false;
+		return true;
 	}
 
 	//get all users
